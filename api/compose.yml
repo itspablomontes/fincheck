@@ -1,0 +1,14 @@
+services:
+  fincheck-db:
+    image: bitnami/postgresql:latest
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USERNAME=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DATABASE=fincheck
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+
+volumes:
+  postgresql_data:
